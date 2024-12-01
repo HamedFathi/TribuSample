@@ -1,0 +1,6 @@
+@Tributech.Presentation_HostAddress = http://localhost:5265
+
+GET {{Tributech.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
