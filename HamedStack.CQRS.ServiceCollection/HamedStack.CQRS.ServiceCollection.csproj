@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HamedStack.CQRS.FluentValidation\HamedStack.CQRS.FluentValidation.csproj" />
+    <ProjectReference Include="..\HamedStack.CQRS\HamedStack.CQRS.csproj" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+
+  </ItemGroup>
+
+</Project>

@@ -26,7 +26,7 @@ public class GetSensorsQueryHandler : IQueryHandler<GetSensorsQuery, IEnumerable
         }
         catch (Exception e)
         {
-            return Result<IEnumerable<SensorPoco>>.Failure(e);
+            return Result<IEnumerable<SensorPoco>>.Failure(null,e);
         }
     }
 

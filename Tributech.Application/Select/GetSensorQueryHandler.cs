@@ -20,7 +20,7 @@ public class GetSensorQueryHandler : IQueryHandler<GetSensorQuery, SensorPoco>
             var currentSensor = await _repository.GetByIdAsync(request.Id, cancellationToken);
             if (currentSensor == null)
             {
-                return Result<SensorPoco>.Failure($"Sensor with {request.Id} id not found.");
+                return Result<SensorPoco>.Failure(null,$"Sensor with {request.Id} id not found.");
             }
 
             return Result<SensorPoco>.Success(new SensorPoco()
@@ -34,7 +34,7 @@ public class GetSensorQueryHandler : IQueryHandler<GetSensorQuery, SensorPoco>
         }
         catch (Exception e)
         {
-            return Result<SensorPoco>.Failure(e);
+            return Result<SensorPoco>.Failure(null, e);
         }
     }
 }

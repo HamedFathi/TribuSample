@@ -11,10 +11,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-        	<PackageReference Include="HamedStack.CQRS.ServiceCollection" Version="1.0.0" />
-		<PackageReference Include="HamedStack.Repository.ServiceCollection" Version="1.0.0" />    
-    <PackageReference Include="HamedStack.CQRS.ServiceCollection" Version="1.0.0" />
-    <PackageReference Include="HamedStack.Result.AspNetCore" Version="1.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -23,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HamedStack.AspNetCore.Endpoint\HamedStack.AspNetCore.Endpoint.csproj" />
+    <ProjectReference Include="..\HamedStack.CQRS.ServiceCollection\HamedStack.CQRS.ServiceCollection.csproj" />
+    <ProjectReference Include="..\HamedStack.Repository.ServiceCollection\HamedStack.Repository.ServiceCollection.csproj" />
+    <ProjectReference Include="..\HamedStack.Result.AspNetCore\HamedStack.Result.AspNetCore.csproj" />
     <ProjectReference Include="..\Tributech.Application\Tributech.Application.csproj" />
     <ProjectReference Include="..\Tributech.Domain\Tributech.Domain.csproj" />
     <ProjectReference Include="..\Tributech.Infrastructure\Tributech.Infrastructure.csproj" />

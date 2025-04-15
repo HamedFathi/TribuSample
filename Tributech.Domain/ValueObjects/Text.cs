@@ -10,7 +10,7 @@ public class Text : SingleValueObject<string>
     public static Result<Text> Create(string value)
     {
         if (string.IsNullOrWhiteSpace(value))
-            return Result<Text>.Failure($"{nameof(Text)} cannot be null or whitespace.");
+            return Result<Text>.Failure(null, $"{nameof(Text)} cannot be null or whitespace.");
         return Result<Text>.Success(new Text(value));
     }
 }

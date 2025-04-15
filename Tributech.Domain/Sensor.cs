@@ -30,25 +30,25 @@ namespace Tributech.Domain
             var nameValue = Text.Create(name);
             if (!nameValue.IsSuccess)
             {
-                return Result<Sensor>.Failure(nameValue.Errors);
+                return Result<Sensor>.Failure(null, nameValue.Errors);
             }
 
             var locationValue = Text.Create(location);
             if (!locationValue.IsSuccess)
             {
-                return Result<Sensor>.Failure(locationValue.Errors);
+                return Result<Sensor>.Failure(null, locationValue.Errors);
             }
 
             var creationTimeValue = CreationTime.Create(creationTime);
             if (!creationTimeValue.IsSuccess)
             {
-                return Result<Sensor>.Failure(creationTimeValue.Errors);
+                return Result<Sensor>.Failure(null, creationTimeValue.Errors);
             }
 
             var warningLimitValue = WarningLimit.Create(lowerWarningLimit, upperWarningLimit);
             if (!warningLimitValue.IsSuccess)
             {
-                return Result<Sensor>.Failure(warningLimitValue.Errors);
+                return Result<Sensor>.Failure(null, warningLimitValue.Errors);
             }
 
             return Result<Sensor>.Success(new Sensor(nameValue.Value!, locationValue.Value!, creationTimeValue.Value!, warningLimitValue.Value!));

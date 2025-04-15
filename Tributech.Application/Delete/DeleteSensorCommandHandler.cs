@@ -18,7 +18,7 @@ public class DeleteSensorCommandHandler : ICommandHandler<DeleteSensorCommand, b
         var currentSensor = await _repository.GetByIdAsync(request.Id, cancellationToken);
         if (currentSensor == null)
         {
-            return Result<bool>.Failure($"Sensor with {request.Id} id not found.");
+            return Result<bool>.Failure(false, $"Sensor with {request.Id} id not found.");
         }
 
         try
@@ -29,7 +29,7 @@ public class DeleteSensorCommandHandler : ICommandHandler<DeleteSensorCommand, b
         }
         catch (Exception e)
         {
-            return Result<bool>.Failure(e);
+            return Result<bool>.Failure(false, e);
         }
     }
 }

@@ -6,12 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="HamedStack.CQRS.FluentValidation" Version="1.0.2" />
-    <PackageReference Include="HamedStack.CQRS" Version="1.0.1" />
-    <PackageReference Include="HamedStack.Repository" Version="1.0.6" />
-    <PackageReference Include="HamedStack.Result.FluentValidation" Version="1.0.2" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\HamedStack.CQRS.FluentValidation\HamedStack.CQRS.FluentValidation.csproj" />
+    <ProjectReference Include="..\HamedStack.CQRS\HamedStack.CQRS.csproj" />
+    <ProjectReference Include="..\HamedStack.Repository\HamedStack.Repository.csproj" />
+    <ProjectReference Include="..\HamedStack.Result.FluentValidation\HamedStack.Result.FluentValidation.csproj" />
     <ProjectReference Include="..\Tributech.Domain\Tributech.Domain.csproj" />
   </ItemGroup>
 </Project>

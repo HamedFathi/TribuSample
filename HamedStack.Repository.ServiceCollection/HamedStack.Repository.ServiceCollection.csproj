@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>HamedStack.TheRepository.ServiceCollection</RootNamespace>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HamedStack.Repository.EntityFrameworkCore\HamedStack.Repository.EntityFrameworkCore.csproj" />
+  </ItemGroup>    
+
+    
+
+</Project>

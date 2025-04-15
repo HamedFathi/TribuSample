@@ -28,14 +28,14 @@ public class UpdateSensorCommandHandler : ICommandHandler<UpdateSensorCommand, b
         var currentSensor = await _repository.GetByIdAsync(request.Id, cancellationToken);
         if (currentSensor == null)
         {
-            return Result<bool>.Failure($"Sensor with {request.Id} id not found.");
+            return Result<bool>.Failure(false, $"Sensor with {request.Id} id not found.");
         }
 
         var newSensor = Sensor.Create(request.Name, request.Location, DateTimeOffset.Now, request.LowerWarningLimit,
             request.UpperWarningLimit);
         if (!newSensor.IsSuccess)
         {
-            return Result<bool>.Failure(newSensor.Errors);
+            return Result<bool>.Failure(false, newSensor.Errors);
         }
 
         currentSensor.WarningLimit = newSensor.Value!.WarningLimit;
@@ -50,7 +50,7 @@ public class UpdateSensorCommandHandler : ICommandHandler<UpdateSensorCommand, b
         }
         catch (Exception e)
         {
-            return Result<bool>.Failure(e);
+            return Result<bool>.Failure(false, e);
         }
     }
 }

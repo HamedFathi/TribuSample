@@ -1,13 +1,15 @@
 using FluentAssertions;
+using HamedStack.WebIntegrationTest;
 using Tributech.Application.Create;
+using Tributech.Infrastructure;
+using Tributech.Presentation;
 
 namespace Tributech.IntegrationTests;
 
-public class SensorIntegrationTests : WebIntegrationTestBase
+public class SensorIntegrationTests : WebIntegrationTestBase<Program,TributechDbContext>
 {
-    public SensorIntegrationTests(IntegrationTestWebAppFactory factory) : base(factory)
-    {
-    }
+    public SensorIntegrationTests() : base(new IntegrationTestWebAppFactory())
+    { }
 
     [Fact]
     public async Task ShouldReturnSuccessWhenSensorIsCreated()

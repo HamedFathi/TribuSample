@@ -17,13 +17,13 @@ public class WarningLimit : ValueObject
     public static Result<WarningLimit> Create(double lowerWarningLimit, double upperWarningLimit)
     {
         if (lowerWarningLimit < 0)
-            return Result<WarningLimit>.Failure($"{nameof(lowerWarningLimit)} cannot be less than zero.");
+            return Result<WarningLimit>.Failure(null, $"{nameof(lowerWarningLimit)} cannot be less than zero.");
 
         if (upperWarningLimit > 100)
-            return Result<WarningLimit>.Failure($"{nameof(upperWarningLimit)} cannot be more than 100.");
+            return Result<WarningLimit>.Failure(null, $"{nameof(upperWarningLimit)} cannot be more than 100.");
 
         if (lowerWarningLimit > upperWarningLimit)
-            return Result<WarningLimit>.Failure($"{nameof(lowerWarningLimit)} cannot be greater than {nameof(upperWarningLimit)}.");
+            return Result<WarningLimit>.Failure(null, $"{nameof(lowerWarningLimit)} cannot be greater than {nameof(upperWarningLimit)}.");
 
         return Result<WarningLimit>.Success(new WarningLimit(lowerWarningLimit, upperWarningLimit));
     }

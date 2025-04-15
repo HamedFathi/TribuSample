@@ -1,5 +1,6 @@
 
 using HamedStack.CQRS.ServiceCollection;
+using HamedStack.MiniMediator;
 using HamedStack.TheRepository.EntityFrameworkCore.Outbox;
 using HamedStack.TheRepository.ServiceCollection;
 using HamedStack.TheResult.AspNetCore;
@@ -33,6 +34,7 @@ namespace Tributech.Presentation
 
             builder.Services.AddInfrastructureServices<TributechDbContext>();
             builder.Services.AddApplicationServices();
+
             builder.Services.AddOutboxBackgroundService(options =>
             {
                 options.PollingIntervalSeconds = 10;

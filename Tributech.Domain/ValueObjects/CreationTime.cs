@@ -10,7 +10,7 @@ public class CreationTime : SingleValueObject<DateTimeOffset>
     public static Result<CreationTime> Create(DateTimeOffset value)
     {
         if (value > DateTimeOffset.Now)
-            return Result<CreationTime>.Failure($"{nameof(CreationTime)} cannot be greater than now.");
+            return Result<CreationTime>.Failure(null, $"{nameof(CreationTime)} cannot be greater than now.");
         return Result<CreationTime>.Success(new CreationTime(value));
     }
 }

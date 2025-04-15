@@ -29,7 +29,7 @@ public class CreateSensorCommandHandler : ICommandHandler<CreateSensorCommand, G
             request.UpperWarningLimit);
         if (!sensor.IsSuccess)
         {
-            return Result<Guid>.Failure(sensor.Errors);
+            return Result<Guid>.Failure(Guid.Empty, sensor.Errors);
         }
 
         try
@@ -40,7 +40,7 @@ public class CreateSensorCommandHandler : ICommandHandler<CreateSensorCommand, G
         }
         catch (Exception e)
         {
-            return Result<Guid>.Failure(e);
+            return Result<Guid>.Failure(Guid.Empty, e);
         }
     }
 }

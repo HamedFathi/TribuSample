@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="HamedStack.Repository.EntityFrameworkCore" Version="1.0.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -18,6 +17,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HamedStack.Repository.EntityFrameworkCore\HamedStack.Repository.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Tributech.Domain\Tributech.Domain.csproj" />
   </ItemGroup>
 </Project>
